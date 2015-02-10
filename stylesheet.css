@@ -1,0 +1,20 @@
+#nav {
+  margin: 5px;
+  height: 20px;
+}
+
+#outlet {
+  margin: 40px;
+}
+
+#app {
+  box-shadow: 0 0 5px #684F91;
+  font-size: 35px;
+  color: #080D3B;
+  background-color: white;
+}
+
+h1 {
+  margin: 20px;
+  color: #7d82b0;
+}

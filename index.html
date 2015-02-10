@@ -2,20 +2,104 @@
   <head>
     <title></title>
     <script src="/javascripts/lib/jquery-2.1.3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.8.1/semantic.min.js" charset="utf-8"></script>
     <script src="http://builds.emberjs.com/release/ember.js"></script>
     <script src="/javascripts/lib/ember-template-compiler-1.10.0.js"></script>
     <script src="/javascripts/lib/handlebars-v3.0.0.js"></script>
     <script src="/javascripts/app.js"></script>
     <script src="/javascripts/router.js"></script>
+    <link rel="stylesheet" href="semantic.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css" media="screen" title="no title" charset="utf-8">
+
   </head>
-  <body>
+  <body id="app">
 
     <script type="text/x-handlebars">
-      <div>
+      <h1>Lucy van Pelt</h1>
+      <div id="nav">
+        {{#link-to 'about'}}About{{/link-to}} |
+        {{#link-to 'personal'}}Personal{{/link-to}} |
+        {{#link-to 'connect'}}Connect{{/link-to}}
+        <br>
+      </div>
+
+      <div id="outlet">
         {{outlet}}
       </div>
     </script>
 
+    <script type="text/x-handlebars" id="about">
+      <div class="ui grid">
+        <div class="eight wide column">
+          <div class="image">
+            <img src="images/main-lucy.png" />
+          </div>
+        </div>
+        <div class="eight wide column">
+          <h3>Experience</h3>
+          <ul>
+            <li>Fussbudget</li>
+            <li>Own Psychiatric Practice for 3 years</li>
+            <li>Role of Christmas Queen in Christmas Play</li>
+            <li>Right Fielder for local baseball team</li>
+          </ul>
+          <h3>Volunteer</h3>
+          <ul>
+            <li>Collected Halloween candy for kids trapped in delusions of the Great Pumpkin</li>
+            <li>Assist local kids in football punting practice</li>
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="personal">
+      <div class="ui grid">
+        <div class="eight wide column">
+          <div class="image">
+            <img src="images/piano.png" />
+          </div>
+        </div>
+        <div class="eight wide column">
+          <h3>Interests</h3>
+          <ul>
+            <li>Classical Musicians</li>
+            <li>Warm Puppies</li>
+          </ul>
+          <h3>Dislikes</h3>
+          <ul>
+            <li>Stupid baby brothers</li>
+            <li>Dog kisses</li>
+            <li>Busts of Beethoven</li>
+          </ul>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="connect">
+      <div class="ui grid">
+        <div class="eight wide column">
+          <div class="image">
+            <img src="images/Lucy_van_Pelt.png" />
+          </div>
+        </div>
+        <div class="eight wide column">
+          <div class="column">
+            <a href="https://twitter.com/Snoopy">
+              <i class="twitter icon"></i> Twitter
+            </a><br>
+            <a href="https://www.facebook.com/Snoopy">
+              <i class="facebook icon"></i> Facebook
+            </a><br>
+            <a href="http://instagram.com/snoopygrams">
+              <i class="instagram icon"></i> Instagram
+            </a><br>
+            <a href="https://vine.co/Snoopy">
+              <i class="vine icon"></i> Vine
+            </a>
+          </div>
+        </div>
+      </div>
+    </script>
 
   </body>
 </html>
