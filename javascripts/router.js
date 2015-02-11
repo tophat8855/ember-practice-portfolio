@@ -1,9 +1,12 @@
 App.Router.map(function() {
-  this.route("personal");
   this.route("connect");
 
   this.resource('about', function() {
     this.route('experience', {path: '/:experience_id'});
+  });
+
+  this.resource('personal', function() {
+    this.route('interest', {path: '/:interest_id'});
   });
 
 });
@@ -24,10 +27,11 @@ App.AboutRoute = Ember.Route.extend({
 App.PersonalRoute = Ember.Route.extend({
   model: function() {
     return[
-    {id: 1, description: "Classical Musicians", link: "http://www.peanuts.com/comicstrips/3256867"},
-    {id: 2, description: "Warm Puppies", link: "http://www.peanuts.com/comicstrips/3256711"},
-    {id: 3, description: "Crashing busts of Beethoven", link: "http://vignette2.wikia.nocookie.net/peanuts/images/f/fd/Pe550227.gif/revision/latest?cb=20130709010950"},
-
+    {id: 1, description: "Classical Musicians", img: "images/classical.jpg"},
+    {id: 2, description: "Warm Puppies", img: "images/puppy.jpg"},
+    {id: 3, description: "Crashing busts of Beethoven", img: "images/busts.gif"},
+    {id: 4, description: "Stomping out germs", img: "images/germs.jpg"},
+    {id: 5, description: "Harassing baby brothers", img: "images/rerun.jpg"},
     ];
   }
 });

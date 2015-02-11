@@ -49,14 +49,14 @@
           </ul>
         </div>
       </div>
-        <div id="outlet2">
-          {{outlet}}
-        </div>
+
+      <div id="outlet2">
+        {{outlet}}
+      </div>
     </script>
 
     <script type="text/x-handlebars" id="about/experience">
       <h2>{{description}}</h2>
-      <h3>{{link}}</h3>
       <img {{bind-attr src=img}} alt="" />
     </script>
 
@@ -70,17 +70,25 @@
         <div class="eight wide column">
           <h3>Interests</h3>
           <ul>
-            <li>Classical Musicians</li>
-            <li>Warm Puppies</li>
-          </ul>
-          <h3>Dislikes</h3>
-          <ul>
-            <li>Stupid baby brothers</li>
-            <li>Dog kisses</li>
-            <li>Busts of Beethoven</li>
+            {{#each interest in model}}
+            <li>
+              {{#link-to "personal.interest" interest}}
+                {{interest.description}}
+              {{/link-to}}
+            </li>
+            {{/each}}
           </ul>
         </div>
       </div>
+
+      <div id="outlet3">
+        {{outlet}}
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="personal/interest">
+      <h2>{{description}}</h2>
+      <img {{bind-attr src=img}} alt="" />
     </script>
 
     <script type="text/x-handlebars" id="connect">
