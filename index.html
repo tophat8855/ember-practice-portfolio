@@ -34,33 +34,30 @@
             <img src="images/main-lucy.png" />
           </div>
         </div>
+
+
         <div class="eight wide column">
           <h3>Experience</h3>
           <ul>
             {{#each experience in model}}
             <li>
-              {{#link-to "experience" experience}}
+              {{#link-to "about.experience" experience}}
                 {{experience.description}}
               {{/link-to}}
             </li>
             {{/each}}
           </ul>
-          <h3>Volunteer</h3>
-          <ul>
-            <li>Collected Halloween candy for kids trapped in delusions of the Great Pumpkin</li>
-            <li>Assist local kids in football punting practice</li>
-          </ul>
         </div>
       </div>
+        <div id="outlet2">
+          {{outlet}}
+        </div>
     </script>
 
-    <script type="text/x-handlebars" id="experience">
-      <div class="ui grid">
-        <div class="eight wide column">
-            <h2>{{description}}</h2>
-            <h3>{{link}}</h3>
-        </div>
-      </div>
+    <script type="text/x-handlebars" id="about/experience">
+      <h2>{{description}}</h2>
+      <h3>{{link}}</h3>
+      <img {{bind-attr src=img}} alt="" />
     </script>
 
     <script type="text/x-handlebars" id="personal">
