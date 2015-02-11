@@ -37,16 +37,28 @@
         <div class="eight wide column">
           <h3>Experience</h3>
           <ul>
-            <li>Fussbudget</li>
-            <li>Own Psychiatric Practice for 3 years</li>
-            <li>Role of Christmas Queen in Christmas Play</li>
-            <li>Right Fielder for local baseball team</li>
+            {{#each experience in model}}
+            <li>
+              {{#link-to "experience" experience}}
+                {{experience.description}}
+              {{/link-to}}
+            </li>
+            {{/each}}
           </ul>
           <h3>Volunteer</h3>
           <ul>
             <li>Collected Halloween candy for kids trapped in delusions of the Great Pumpkin</li>
             <li>Assist local kids in football punting practice</li>
           </ul>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" id="experience">
+      <div class="ui grid">
+        <div class="eight wide column">
+            <h2>{{description}}</h2>
+            <h3>{{link}}</h3>
         </div>
       </div>
     </script>
